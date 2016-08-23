@@ -1,0 +1,15 @@
+{
+  "name": "dep-resolve-example",
+  "version": "1.0.0",
+  "description": "simple example dependencie resolver",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^4.6.0"
+  },
+  "scripts": {
+    "test": "tape tests/index.js"
+  },
+  "author": "Matthew poulson",
+  "license": "MIT"
+}
