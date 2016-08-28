@@ -23,7 +23,7 @@ const depLooper = (depObjList) => {
             return loop(newList);
         }
         else {
-            return list.reduce(makeGrossString);
+            return list;
         }
     }
     return loop();
@@ -32,5 +32,11 @@ const depLooper = (depObjList) => {
 
 export default (depList) => {
     const fixedList = depList.map(stringFixer);
-    return depLooper(fixedList);
+    const resolvedClean = depLooper(fixedList);
+    return Array.isArray(resolvedClean) ? resolvedClean.reduce(makeGrossString) : resolvedClean;
 };
+
+export const depResolveClean = (depList) => {
+    const fixedList = depList.map(stringFixer);
+    return depLooper(fixedList);
+}
